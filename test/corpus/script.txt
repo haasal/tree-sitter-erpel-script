@@ -1,0 +1,153 @@
+===
+FN Keys single
+===
+
+SCRIPT(FN(1))
+
+---
+
+(source_file
+  (command
+    (script
+      (action
+        (report
+          (key_click
+            (fn_key)))))))
+
+===
+FN Keys double
+===
+
+SCRIPT(FN(12))
+
+---
+
+(source_file
+  (command
+    (script
+      (action
+        (report
+          (key_click
+            (fn_key)))))))
+
+===
+Modifier keys
+===
+
+SCRIPT(SHIFTa)
+
+---
+
+(source_file
+  (command
+    (script
+      (action
+        (report
+          (modifier_key)
+          (key_click
+            (lowercase_key)))))))
+
+===
+Modifier keys - Missing keyclick
+:error
+===
+
+SCRIPT(SHIFT)
+
+---
+
+===
+Multiple modifiers
+===
+
+SCRIPT(SHIFT GUI a)
+
+---
+
+(source_file
+  (command
+    (script
+      (action
+        (report
+          (modifier_key)
+          (modifier_key)
+          (key_click
+            (lowercase_key)
+          )
+        )
+      )
+    )
+  )
+)
+
+===
+Multiple modifiers, multiple keys
+===
+
+SCRIPT(GUI^a_b)
+
+---
+
+(source_file
+  (command
+    (script
+      (action
+        (report
+          (modifier_key)
+          (modifier_key)
+          (key_click
+            (lowercase_key)
+          )
+        )
+      )
+      (action
+        (report
+          (key_click
+            (special_key)
+          )
+        )
+      )
+      (action
+        (report
+          (key_click
+            (lowercase_key)
+          )
+        )
+      )
+    )
+  )
+)
+
+===
+Macros
+===
+
+SCRIPT(GUI^a b SAVE)
+
+---
+
+(source_file
+  (command
+    (script
+      (action
+        (report
+          (modifier_key)
+          (modifier_key)
+          (key_click
+            (lowercase_key)
+          )
+        )
+      )
+      (action
+        (report
+          (key_click
+            (lowercase_key)
+          )
+        )
+      )
+      (action
+        (macro)
+      )
+    )
+  )
+)

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "erpel_script",
+      "camelcase": "ErpelScript",
+      "title": "ErpelScript",
+      "scope": "source.erpel_script",
+      "file-types": ["erpel"],
+      "injection-regex": "^erpel_script$",
+      "class-name": "TreeSitterErpelScript"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A parser for script file automating rubber duckies",
+    "authors": [
+      {
+        "name": "Alexander Haas",
+        "email": "alexander@haas.me",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://gitlab.com/haasal/tree-sitter-erpel-script",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "java": false,
+    "node": true,
+    "python": false,
+    "rust": false,
+    "swift": false,
+    "zig": false
+  }
+}

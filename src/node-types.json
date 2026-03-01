@@ -1,0 +1,259 @@
+[
+  {
+    "type": "action",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "report",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "delay_args",
+          "named": true
+        },
+        {
+          "type": "generic_args",
+          "named": true
+        },
+        {
+          "type": "script",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_args",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lowercase_key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key_click",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "fn_key",
+          "named": true
+        },
+        {
+          "type": "lowercase_key",
+          "named": true
+        },
+        {
+          "type": "special_key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "modifier_key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "report",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key_click",
+          "named": true
+        },
+        {
+          "type": "modifier_key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "script",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "action",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "special_key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "ALT",
+    "named": false
+  },
+  {
+    "type": "BACKSPACE",
+    "named": false
+  },
+  {
+    "type": "CTRL",
+    "named": false
+  },
+  {
+    "type": "DELAY",
+    "named": false
+  },
+  {
+    "type": "DOWN",
+    "named": false
+  },
+  {
+    "type": "ENTER",
+    "named": false
+  },
+  {
+    "type": "ESC",
+    "named": false
+  },
+  {
+    "type": "GUI",
+    "named": false
+  },
+  {
+    "type": "INPUT_FILE",
+    "named": false
+  },
+  {
+    "type": "LEFT",
+    "named": false
+  },
+  {
+    "type": "OUTPUT_FILE",
+    "named": false
+  },
+  {
+    "type": "RIGHT",
+    "named": false
+  },
+  {
+    "type": "SAVE",
+    "named": false
+  },
+  {
+    "type": "SCRIPT",
+    "named": false
+  },
+  {
+    "type": "SEND",
+    "named": false
+  },
+  {
+    "type": "SERIAL_DEVICE",
+    "named": false
+  },
+  {
+    "type": "SHIFT",
+    "named": false
+  },
+  {
+    "type": "SPACE",
+    "named": false
+  },
+  {
+    "type": "STOP",
+    "named": false
+  },
+  {
+    "type": "TAB",
+    "named": false
+  },
+  {
+    "type": "UP",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "_",
+    "named": false
+  },
+  {
+    "type": "delay_args",
+    "named": true
+  },
+  {
+    "type": "fn_key",
+    "named": true
+  },
+  {
+    "type": "lowercase_key",
+    "named": true
+  }
+]
