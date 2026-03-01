@@ -11,6 +11,7 @@ export default grammar({
   name: "erpel_script",
   rules: {
     source_file: ($) => repeat($.command),
+    comment: ($) => seq("(*", /.*?/, "*)"),
     command: ($) =>
       choice(
         seq("DELAY", "(", $.delay_args, ")"),

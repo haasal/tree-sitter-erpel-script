@@ -1,3 +1,5 @@
+(comment) @comment
+
 "DELAY" @keyword
 "SCRIPT" @keyword
 "SERIAL_DEVICE" @keyword
