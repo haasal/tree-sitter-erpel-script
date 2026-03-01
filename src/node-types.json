@@ -42,6 +42,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "fn_key",
     "named": true,
     "fields": {}
@@ -140,6 +145,10 @@
         {
           "type": "command",
           "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
         }
       ]
     }
@@ -154,7 +163,15 @@
     "named": false
   },
   {
+    "type": "(*",
+    "named": false
+  },
+  {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": "*)",
     "named": false
   },
   {

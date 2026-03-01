@@ -10,7 +10,7 @@
 export default grammar({
   name: "erpel_script",
   rules: {
-    source_file: ($) => repeat($.command),
+    source_file: ($) => repeat(choice($.command, $.comment)),
     comment: ($) => seq("(*", /.*?/, "*)"),
     command: ($) =>
       choice(
