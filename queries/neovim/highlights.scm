@@ -4,6 +4,7 @@
 "INPUT_FILE" @keyword
 "OUTPUT_FILE" @keyword
 "SEND" @keyword
+"SEND_FILE" @keyword
 "STOP" @keyword
 
 "(" @punctuation.bracket
