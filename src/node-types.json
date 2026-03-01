@@ -222,6 +222,10 @@
     "named": false
   },
   {
+    "type": "SEND_FILE",
+    "named": false
+  },
+  {
     "type": "SERIAL_DEVICE",
     "named": false
   },
