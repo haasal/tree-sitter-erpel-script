@@ -1,0 +1,62 @@
+===
+DELAY
+===
+
+DELAY(123)
+
+---
+
+(source_file
+  (command
+    (delay_args)
+  )
+)
+
+===
+DELAY - wrong args
+:error
+===
+
+DELAY(abc)
+
+---
+
+===
+DELAY - no args
+:error
+===
+
+DELAY()
+
+---
+
+===
+INPUT_FILE
+===
+
+INPUT_FILE(./ab/d)
+
+---
+
+(source_file
+  (command
+    (generic_args
+      (lowercase_key)
+      (lowercase_key)
+      (lowercase_key)
+      (lowercase_key)
+      (lowercase_key)
+      (lowercase_key)
+    )
+  )
+)
+
+
+===
+INPUT_FILE - capital letter
+:error
+===
+
+INPUT_FILE(Abc)
+
+---

@@ -3,6 +3,14 @@
 This is a tree-sitter grammar for the _Erpel_ scripting language.
 This is a very simple scripting language used to control rubber ducky USB sticks.
 
+## Install
+
+On MacOS run with C++20 compiler flag
+
+```zsh
+CXXFLAGS="-std=c++20" npm install
+```
+
 ## Grammar
 
 This is the grammar for the scripting language in Extended BNF.

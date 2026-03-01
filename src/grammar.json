@@ -1,0 +1,349 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "erpel_script",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "command"
+      }
+    },
+    "command": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "DELAY"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "delay_args"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "SCRIPT"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "script"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "SERIAL_DEVICE"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "generic_args"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "INPUT_FILE"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "generic_args"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "OUTPUT_FILE"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "generic_args"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "SEND"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "STOP"
+            },
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        }
+      ]
+    },
+    "generic_args": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "lowercase_key"
+      }
+    },
+    "delay_args": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "script": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "action"
+      }
+    },
+    "action": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "report"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "macro"
+        }
+      ]
+    },
+    "report": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "modifier_key"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "key_click"
+        }
+      ]
+    },
+    "modifier_key": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "SHIFT"
+        },
+        {
+          "type": "STRING",
+          "value": "^"
+        },
+        {
+          "type": "STRING",
+          "value": "GUI"
+        },
+        {
+          "type": "STRING",
+          "value": "CTRL"
+        },
+        {
+          "type": "STRING",
+          "value": "ALT"
+        }
+      ]
+    },
+    "key_click": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "lowercase_key"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fn_key"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "special_key"
+        }
+      ]
+    },
+    "lowercase_key": {
+      "type": "PATTERN",
+      "value": "[a-z0-9,.\\[\\]\\\\§=;/]"
+    },
+    "fn_key": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "FN"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\d[012]?"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "special_key": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "SPACE"
+        },
+        {
+          "type": "STRING",
+          "value": "_"
+        },
+        {
+          "type": "STRING",
+          "value": "UP"
+        },
+        {
+          "type": "STRING",
+          "value": "DOWN"
+        },
+        {
+          "type": "STRING",
+          "value": "LEFT"
+        },
+        {
+          "type": "STRING",
+          "value": "RIGHT"
+        },
+        {
+          "type": "STRING",
+          "value": "TAB"
+        },
+        {
+          "type": "STRING",
+          "value": "ESC"
+        },
+        {
+          "type": "STRING",
+          "value": "BACKSPACE"
+        },
+        {
+          "type": "STRING",
+          "value": "ENTER"
+        }
+      ]
+    },
+    "macro": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "SAVE"
+        },
+        {
+          "type": "STRING",
+          "value": "SERIAL_DEVICE"
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}
