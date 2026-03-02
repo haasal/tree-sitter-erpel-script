@@ -40,23 +40,20 @@ INPUT_FILE(./ab/d)
 
 (source_file
   (command
-    (generic_args
-      (lowercase_key)
-      (lowercase_key)
-      (lowercase_key)
-      (lowercase_key)
-      (lowercase_key)
-      (lowercase_key)
-    )
+    (generic_args)
   )
 )
 
 
 ===
 INPUT_FILE - capital letter
-:error
 ===
 
 INPUT_FILE(Abc)
 
 ---
+(source_file
+  (command
+    (generic_args)
+  )
+)

@@ -35,6 +35,10 @@
           "named": true
         },
         {
+          "type": "lowercase_args",
+          "named": true
+        },
+        {
           "type": "script",
           "named": true
         }
@@ -50,21 +54,6 @@
     "type": "fn_key",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "generic_args",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "lowercase_key",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "key_click",
@@ -84,6 +73,21 @@
         },
         {
           "type": "special_key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lowercase_args",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lowercase_key",
           "named": true
         }
       ]
@@ -276,6 +280,10 @@
   },
   {
     "type": "delay_args",
+    "named": true
+  },
+  {
+    "type": "generic_args",
     "named": true
   },
   {

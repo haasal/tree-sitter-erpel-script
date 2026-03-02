@@ -5,10 +5,23 @@ This is a very simple scripting language used to control rubber ducky USB sticks
 
 ## Install
 
-On MacOS run with C++20 compiler flag
+1. First install the tree-sitter CLI.
+2. On MacOS run with C++20 compiler flag
 
 ```zsh
 CXXFLAGS="-std=c++20" npm install
+```
+
+3. Build the parser (e.g. `parser.c`)
+
+```zsh
+tree-sitter generate
+```
+
+4. Run tests
+
+```zsh
+tree-sitter test
 ```
 
 ## Grammar

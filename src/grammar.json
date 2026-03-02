@@ -93,7 +93,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "generic_args"
+              "name": "lowercase_args"
             },
             {
               "type": "STRING",
@@ -200,12 +200,16 @@
         }
       ]
     },
-    "generic_args": {
+    "lowercase_args": {
       "type": "REPEAT1",
       "content": {
         "type": "SYMBOL",
         "name": "lowercase_key"
       }
+    },
+    "generic_args": {
+      "type": "PATTERN",
+      "value": "[^)]*?"
     },
     "delay_args": {
       "type": "PATTERN",
