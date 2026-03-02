@@ -14,7 +14,7 @@
 
 (command (delay_args) @number)
 
-(generic_args) @string
+(command (generic_args) @string)
 (command (lowercase_args) @string)
 
 (modifier_key) @operator
